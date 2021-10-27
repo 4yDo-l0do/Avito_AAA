@@ -1,10 +1,10 @@
 class CountVectorizer:
-    "Convert a collection of text documents to a matrix of token counts."
+    """Convert a collection of text documents to a matrix of token counts."""
     def __init__(self):
         self.__feature_names = []
 
     def fit_transform(self, corpus):
-        "создает словарь с уникальными значениями и формерует по нему терм-документную матрицу"
+        """создает словарь с уникальными значениями и формерует по нему терм-документную матрицу"""
         result = []
         #создаем список с уникальными словами
         for line in corpus:
@@ -21,7 +21,7 @@ class CountVectorizer:
 
 
     def get_feature_names(self):
-        "возвращает список уникальных слов"
+        """возвращает список уникальных слов"""
         return self.__feature_names
 
 if __name__ == '__main__':
