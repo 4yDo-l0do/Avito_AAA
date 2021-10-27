@@ -4,13 +4,14 @@ class CountVectorizer:
         self.__feature_names = []
 
     def fit_transform(self, corpus):
+        "создает словарь с уникальными значениями и формерует по нему терм-документную матрицу"
         result = []
-        'создаем список с уникальными словами'
+        #создаем список с уникальными словами
         for line in corpus:
             for word in line.split():
                 if word.lower() not in self.__feature_names:
                     self.__feature_names.append(word.lower())
-        'находим сколько раз встречается слово'
+        #находим сколько раз встречается слово
         for line in corpus:
             dict_names = dict.fromkeys(self.__feature_names, 0)
             for word in line.split():
@@ -20,6 +21,7 @@ class CountVectorizer:
 
 
     def get_feature_names(self):
+        "возвращает список уникальных слов"
         return self.__feature_names
 
 if __name__ == '__main__':
