@@ -83,4 +83,3 @@ if __name__ == "__main__":
     lesson = json.loads(lesson_str)
     lesson_ad = Advert(lesson)
     print(lesson_ad)
-    print(lesson_ad.__dict__)
